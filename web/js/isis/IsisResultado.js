@@ -172,10 +172,10 @@ IsisResultado.prototype = {
                 //                polygonFeature.getGeometry().transform('EPSG:4326', IsisSesion.getIsisMapa().getMap().getView().getProjection());
                 polygonFeature.setStyle(new ol.style.Style({
                     fill: new ol.style.Fill({
-                        color: 'rgba(255, 255, 255, 0.9)'
+                        color: 'rgba(1, 143, 208, 0.2)'
                     }),
                     stroke: new ol.style.Stroke({
-                        color: '#ffcc33',
+                        color: '#018FD0',
                         width: 2
                     }),
                     image: new ol.style.Circle({

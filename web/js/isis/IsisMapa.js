@@ -65,7 +65,8 @@ function IsisMapa(){
     var view = new ol.View({
         resolutions: this.getResolutions(),
         resolution: 1763.8924166737224,
-        center: ol.proj.transform([-6230946.505053505, -3874239.541910441], 'EPSG:900913', 'EPSG:900913'),
+        //        center: ol.proj.transform([-6230946.505053505, -3874239.541910441], 'EPSG:900913', 'EPSG:900913'),
+        center: ol.proj.transform([-6011477.407389778, -3872497.30722128], 'EPSG:900913', 'EPSG:900913'),
         zoom: 4
     });
      
@@ -466,6 +467,33 @@ IsisMapa.prototype = {
                 });
             }
         });
+        
+        
+        //Cambio de estilo del zoom box
+        var interactions = this.map.getInteractions().getArray();
+        for (var i = 0; i < interactions.length; i++){
+            var interaction = interactions[i];
+            if (ol.interaction.DragZoom.prototype.isPrototypeOf(interaction)){
+                interaction.setProperties({
+                    style: new ol.style.Style({
+                        fill: new ol.style.Fill({
+                            color: 'rgba(1, 143, 208, 0.2)'
+                        }),
+                        stroke: new ol.style.Stroke({
+                            color: '#018FD0',
+                            width: 2
+                        }),
+                        image: new ol.style.Circle({
+                            radius: 7,
+                            fill: new ol.style.Fill({
+                                color: '#ffcc33'
+                            })
+                        })
+                    })
+                    }); 
+            }
+        }
+    //        IsisSesion.getIsisMapa().getMap().getInteractions().getArray()[8].getProperties()
         
   
         

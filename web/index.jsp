@@ -16,7 +16,7 @@
         <title>Geopostal</title>
 
         <script type="text/javascript" src="js/libs/pace.js<%=version%>"></script>
-        
+
 
         <link rel="stylesheet" href="js/libs/pace.css" type="text/css">
         <!-- Bootstrap -->
@@ -85,8 +85,15 @@
             </div>
         </div>
 
+        <div class="modalScreen" > </div>
         <div id="loader" >
-            LOADING...
+            <div class="spinner">
+                <div class="doublebounce1"></div>
+                <div class="doublebounce2"></div>
+            </div>
+            <div style="float:left; margin-left: 16px; margin-top: 5px;">
+                Cargando...
+            </div>
         </div>
 
         <div id="resJson" style="display: none"></div>  

@@ -36,7 +36,8 @@ IsisExt.prototype = {
 
     mostrarLoader: function(mensaje) {
         if(!this.mostrandoLoader){
-            $("#loader").toggleClass("active");
+            $("#loader").addClass("active");
+            $(".modalScreen").addClass("active");
             this.mostrandoLoader = true;
         }
     },
@@ -45,7 +46,8 @@ IsisExt.prototype = {
      */
     ocultarLoader: function() {
         if (this.mostrandoLoader){
-            $("#loader").toggleClass("active");
+            $("#loader").removeClass("active");
+            $(".modalScreen").removeClass("active");
             this.mostrandoLoader = false;
         }
         

@@ -32,6 +32,7 @@ function IsisPanel(id, parent ,title, htmlContent){
         this.htmlContent = "";    
     }
     this.onExpandCallback = null;
+    this.onCollapseCallback = null;
     this.doLayout();
 }
 
@@ -86,28 +87,43 @@ IsisPanel.prototype = {
             this.onExpandCallback();
         }
         $('#isisPanel' + this.id + ".accordeon-item").addClass("open-item");
-        setTimeout(function(){  $('#sidebar-content').getNiceScroll().resize(); }, 650);
+        setTimeout(function(){
+            $('#sidebar-content').getNiceScroll().resize();
+        }, 650);
     },
     collapse : function (){
         $('#isisPanel' + this.id + ".accordeon-item > .accordeon-content ").hide();
         $('#isisPanel' + this.id + ".accordeon-item").removeClass("open-item");
-       
-        setTimeout(function(){  $('#sidebar-content').getNiceScroll().resize(); }, 650);
+       if (this.onCollapseCallback != null){
+            this.onCollapseCallback();
+        }
+        setTimeout(function(){
+            $('#sidebar-content').getNiceScroll().resize();
+        }, 650);
     }, 
     toogle : function (){
         if (  $('#isisPanel' + this.id + ".accordeon-item > .accordeon-content ").is(":hidden")){
             if (this.onExpandCallback != null){
                 this.onExpandCallback();
             }
+        }else{
+            if (this.onCollapseCallback != null){
+                this.onCollapseCallback();
+            }
         }
         $('#isisPanel' + this.id + ".accordeon-item > .accordeon-content ").slideToggle("blind");
         $('#isisPanel' + this.id + ".accordeon-item").toggleClass("open-item");
-        setTimeout(function(){  $('#sidebar-content').getNiceScroll().resize(); }, 650);
+        setTimeout(function(){
+            $('#sidebar-content').getNiceScroll().resize();
+        }, 650);
         
         
     },
     onExpand : function (callback){
         this.onExpandCallback = callback;
+    },
+    onCollapse: function (callback){
+        this.onCollapseCallback = callback;
     },
     replaceContent : function (htmlContent){
         $('#isisPanel' + this.id + ".accordeon-item > .accordeon-content ").html(htmlContent);

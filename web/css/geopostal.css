@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'yanone_kaffeesatzbold';
-    src: url('fonts/Yanone/YanoneKaffeesatz-Bold-webfont.eot');
+    src: url('fonts/Yanone/YanoneKaffeesatz-Bold-webfont.');
     src: url('fonts/Yanone/YanoneKaffeesatz-Bold-webfont.eot?#iefix') format('embedded-opentype'),
         url('fonts/Yanone/YanoneKaffeesatz-Bold-webfont.woff2') format('woff2'),
         url('fonts/Yanone/YanoneKaffeesatz-Bold-webfont.woff') format('woff'),
@@ -156,18 +156,26 @@ legend{
 #loader {
     z-index: 1000000;
     opacity: 0;
-    width: 100px; 
-    height: 50px; 
-    position: absolute; 
-    left: 50%; 
-    top: -50%; 
-    margin-left: -50px; 
-    margin-top: -25px; 
-    background-color: #CACACA;
+    width: 152px;
+    height: 55px;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    margin-left: -76px;
+    margin-top: -25px;
+    background-color: #FFFFFF;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    padding: 13px;
+    border: 1px solid #797979;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(98, 98, 98, 1);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(98, 98, 98, 1);
+    box-shadow: 1px 1px 5px 1px rgba(98, 98, 98, 1);
 }
 
 #loader.active {
@@ -343,7 +351,7 @@ legend{
 #isisPanelcontacto > div.accordeon-title{
     background-image: url('images/icons/burbuja.png');
     background-position: 12px 12px;
-    
+
 }
 
 
@@ -517,15 +525,15 @@ Estilo de adentro del mapa
     -moz-border-radius: 0px;
     border-radius: 0px;
     background-color: rgba(255, 255, 255, 0.5);
-    top: 89px;
+    top: 87px;
     left: 27px;
     border-left: 1px solid #c2c2c2;
     border-right: 1px solid #c2c2c2;
-    width: 20px;
+    width: 18px;
 }
 
 .ol-zoomslider-thumb {
-    margin-left: -2px;
+    margin-left: -3px;
     background-color: rgba(255, 255, 255, 1);
     color: #4D4D4D;
     border: 1px solid #c2c2c2;
@@ -1195,3 +1203,96 @@ button#limpiarHistorialButton {
 legend {
     border: none !important
 }
+
+#imprimir-rotacion {
+    border: 1px solid #d3d3d3;
+    background: #e6e6e6 url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
+    font-weight: normal;
+    color: #555555;
+}
+
+
+.geopostal-select {
+    border: 1px solid rgb(184, 184, 184);
+    margin-bottom: 10px;
+    padding: 3px;
+    width: 228px !important;
+}
+
+
+
+
+
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    /*margin: 100px auto;*/
+}
+
+.doublebounce1, .doublebounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #018FD0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.doublebounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+    0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+} 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+}
+}
+
+#loader .spinner{
+    float: left;
+}
+
+
+.modalScreen{
+    width: 0%;
+    height: 100%;
+    top: 0%;
+    left: 0;
+    background-color: #000;
+    position: absolute;
+    z-index: 150;
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity 1.0s ease;
+    -moz-transition: opacity 1.0s ease;
+    -o-transition: opacity 1.0s ease;
+    transition: opacity 1.0s ease;
+    /*    -webkit-transition: width 0s ease;
+        -moz-transition: width 0s ease;
+        -o-transition: width 0s ease;
+        transition: width 0s ease;*/
+
+}
+
+.modalScreen.active{
+    width: 100%;
+    opacity: 0.5;
+}
+
