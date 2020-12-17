@@ -1,4 +1,4 @@
-# geo-postal2 [DISCONTINUADO]
+# geo-postal2 [DESCONTINUADO]
 Versión 2 del visualizador de mapas del correo uruguayo.
 
 
